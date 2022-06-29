@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho", "DoctorWho\DoctorWho.csproj", "{FAF37986-12E3-40D2-80BF-4F5BD30BF7E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho.Db", "DoctorWho.Db\DoctorWho.Db.csproj", "{0858A644-EA7B-4E40-930E-FD5E382C4C26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAF37986-12E3-40D2-80BF-4F5BD30BF7E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF37986-12E3-40D2-80BF-4F5BD30BF7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF37986-12E3-40D2-80BF-4F5BD30BF7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF37986-12E3-40D2-80BF-4F5BD30BF7E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88DC820A-432C-4D71-B8DB-5F19F98EEE49}
+	EndGlobalSection
+EndGlobal
