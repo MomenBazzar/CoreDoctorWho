@@ -1,6 +1,6 @@
 ﻿namespace DoctorWho.Db.Entities
 {
-    class Episode
+    public class Episode
     {
         public int EpisodeId { get; set; }
         public int SeriesNumber { get; set; }

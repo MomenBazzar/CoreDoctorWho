@@ -1,6 +1,6 @@
 ﻿namespace DoctorWho.Db.Entities
 {
-    class Companion
+    public class Companion
     {
         public int CompanionId { get; set; }
         public string CompanionName { get; set; }

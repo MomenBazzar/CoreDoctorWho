@@ -1,6 +1,6 @@
 ﻿namespace DoctorWho.Db.Entities
 {
-    class Enemy
+    public class Enemy
     {
         public int EnemyId { get; set; }
         public string EnemyName { get; set; }
