@@ -1,5 +1,6 @@
 ﻿using DoctorWho.Db;
 using DoctorWho.Db.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace DoctorWho;
 
 internal class Program
@@ -7,8 +8,6 @@ internal class Program
     static void Main(string[] args)
     {
         var context = new DoctorWhoCoreDbContext();
-
-        SeedTheTables(context);
     }
 
     private static void SeedTheTables(DoctorWhoCoreDbContext context)

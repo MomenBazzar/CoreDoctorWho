@@ -5,13 +5,13 @@ namespace DoctorWho.Db;
 
 public class DoctorWhoCoreDbContext : DbContext
 {
-    DbSet<Doctor> Doctors { get; set; }
-    DbSet<Author> Authors { get; set; }
-    DbSet<Companion> Companions { get; set; }
-    DbSet<Enemy> Enemies { get; set; }
-    DbSet<Episode> Episodes { get; set; }
-    DbSet<EpisodeCompanion> EpisodeCompanions { get; set; }
-    DbSet<EpisodeEnemy> EpisodeEnemies { get; set; }
+    public DbSet<Doctor> Doctors { get; set; }
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Companion> Companions { get; set; }
+    public DbSet<Enemy> Enemies { get; set; }
+    public DbSet<Episode> Episodes { get; set; }
+    public DbSet<EpisodeCompanion> EpisodeCompanions { get; set; }
+    public DbSet<EpisodeEnemy> EpisodeEnemies { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
@@ -22,4 +22,5 @@ public class DoctorWhoCoreDbContext : DbContext
     {
 
     }
+
 }
