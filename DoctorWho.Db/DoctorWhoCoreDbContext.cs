@@ -1,4 +1,5 @@
 ﻿using DoctorWho.Db.Entities;
+using DoctorWho.Db.SqlResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoctorWho.Db;
@@ -12,6 +13,10 @@ public class DoctorWhoCoreDbContext : DbContext
     public DbSet<Episode> Episodes { get; set; }
     public DbSet<EpisodeCompanion> EpisodeCompanions { get; set; }
     public DbSet<EpisodeEnemy> EpisodeEnemies { get; set; }
+    public virtual DbSet<ViewEpisodes> ViewEpisodes { get; set; }
+    public virtual DbSet<FnCompanionsResult> FnCompanions { get; set; }
+    public virtual DbSet<FnEnemiesResult> FnEnemies { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
@@ -20,7 +25,14 @@ public class DoctorWhoCoreDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder
+            .Entity<ViewEpisodes>(ve =>
+            {
+                ve.HasNoKey();
+                ve.ToView("viewEpisodes");
+            });
 
+        modelBuilder.Entity<FnCompanionsResult>(ve => ve.HasNoKey());
+        modelBuilder.Entity<FnEnemiesResult>(ve => ve.HasNoKey());
     }
-
 }

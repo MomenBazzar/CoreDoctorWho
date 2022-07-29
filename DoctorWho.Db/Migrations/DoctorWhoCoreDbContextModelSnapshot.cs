@@ -36,7 +36,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Companion", b =>
@@ -57,7 +57,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("CompanionId");
 
-                    b.ToTable("Companions");
+                    b.ToTable("Companions", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Doctor", b =>
@@ -87,7 +87,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("DoctorId");
 
-                    b.ToTable("Doctors");
+                    b.ToTable("Doctors", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Enemy", b =>
@@ -108,7 +108,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("EnemyId");
 
-                    b.ToTable("Enemies");
+                    b.ToTable("Enemies", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Episode", b =>
@@ -152,7 +152,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Episodes");
+                    b.ToTable("Episodes", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.EpisodeCompanion", b =>
@@ -175,7 +175,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("EpisodeCompanions");
+                    b.ToTable("EpisodeCompanions", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.EpisodeEnemy", b =>
@@ -198,7 +198,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("EpisodeEnemies");
+                    b.ToTable("EpisodeEnemies", (string)null);
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Episode", b =>
