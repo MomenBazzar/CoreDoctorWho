@@ -5,8 +5,6 @@ namespace DoctorWho;
 
 internal class Program
 {
-    public static DbSet<string> Text { get; set; }
-
     private static DoctorWhoCoreDbContext _context;
     static void Main(string[] args)
     {
