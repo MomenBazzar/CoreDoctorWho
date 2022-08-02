@@ -1,5 +1,6 @@
 ﻿using DoctorWho.Db;
 using DoctorWho.Db.Entities;
+using DoctorWho.Db.Repositories;
 using Microsoft.EntityFrameworkCore;
 namespace DoctorWho;
 
@@ -9,7 +10,6 @@ internal class Program
     static void Main(string[] args)
     {
         _context = new DoctorWhoCoreDbContext();
-
         Console.WriteLine(CompanionNamesForEpisode(3));
         
     }
