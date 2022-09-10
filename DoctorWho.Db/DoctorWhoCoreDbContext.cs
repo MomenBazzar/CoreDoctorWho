@@ -17,11 +17,9 @@ public class DoctorWhoCoreDbContext : DbContext
     public virtual DbSet<FnCompanionsResult> FnCompanions { get; set; }
     public virtual DbSet<FnEnemiesResult> FnEnemies { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public DoctorWhoCoreDbContext(DbContextOptions<DoctorWhoCoreDbContext> options)
+   : base(options)
     {
-        optionsBuilder
-          .UseSqlServer(
-            "Data Source=MomenLab\\SQLEXPRESS;initial catalog=DoctorWhoCore;persist security info=True;Integrated Security=SSPI;");
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

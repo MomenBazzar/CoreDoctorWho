@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorWho", "DoctorWho\Doct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorWho.Db", "DoctorWho.Db\DoctorWho.Db.csproj", "{0858A644-EA7B-4E40-930E-FD5E382C4C26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho.Web", "DoctorWho.Web\DoctorWho.Web.csproj", "{45FB01ED-CDEA-46B1-87C0-541274BADCA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0858A644-EA7B-4E40-930E-FD5E382C4C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FB01ED-CDEA-46B1-87C0-541274BADCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FB01ED-CDEA-46B1-87C0-541274BADCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FB01ED-CDEA-46B1-87C0-541274BADCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FB01ED-CDEA-46B1-87C0-541274BADCA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace DoctorWho.Db.Repositories;
-public class EpisodeRepository : GenericRepository<Episode>
+public class EpisodeRepository : GenericRepository<Episode>, IEpisodeRepository
 {
     public EpisodeRepository(DoctorWhoCoreDbContext context) : base(context)
     {
