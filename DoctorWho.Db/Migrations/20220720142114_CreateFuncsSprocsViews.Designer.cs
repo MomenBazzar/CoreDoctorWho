@@ -4,6 +4,7 @@ using DoctorWho.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoctorWho.Db.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220720142114_CreateFuncsSprocsViews")]
+    partial class CreateFuncsSprocsViews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +38,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.ToTable("Authors", (string)null);
+                    b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Companion", b =>
@@ -57,7 +59,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("CompanionId");
 
-                    b.ToTable("Companions", (string)null);
+                    b.ToTable("Companions");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Doctor", b =>
@@ -87,7 +89,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("DoctorId");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Enemy", b =>
@@ -108,7 +110,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasKey("EnemyId");
 
-                    b.ToTable("Enemies", (string)null);
+                    b.ToTable("Enemies");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Episode", b =>
@@ -152,7 +154,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Episodes", (string)null);
+                    b.ToTable("Episodes");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.EpisodeCompanion", b =>
@@ -175,7 +177,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("EpisodeCompanions", (string)null);
+                    b.ToTable("EpisodeCompanions");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.EpisodeEnemy", b =>
@@ -198,7 +200,7 @@ namespace DoctorWho.Db.Migrations
 
                     b.HasIndex("EpisodeId");
 
-                    b.ToTable("EpisodeEnemies", (string)null);
+                    b.ToTable("EpisodeEnemies");
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Entities.Episode", b =>

@@ -1,17 +1,30 @@
 ﻿using DoctorWho.Db;
 using DoctorWho.Db.Entities;
+using DoctorWho.Db.Repositories;
+using Microsoft.EntityFrameworkCore;
 namespace DoctorWho;
 
 internal class Program
 {
+    private static DoctorWhoCoreDbContext _context;
     static void Main(string[] args)
     {
-        var context = new DoctorWhoCoreDbContext();
-
-        SeedTheTables(context);
+        _context = new DoctorWhoCoreDbContext();
+        Console.WriteLine(CompanionNamesForEpisode(3));
+        
     }
 
-    private static void SeedTheTables(DoctorWhoCoreDbContext context)
+    public static string EnemeyNamesForEpisode(int episodeId)
+    {
+        return _context.FnEnemies.FromSqlInterpolated($"SELECT dbo.fnEnemies({episodeId}) as EnemiesNames").FirstOrDefault().EnemiesNames;
+    }
+
+    public static string CompanionNamesForEpisode(int episodeId)
+    {
+        return _context.FnCompanions.FromSqlInterpolated($"SELECT dbo.fnCompanions({episodeId}) as CompanionsNames").FirstOrDefault().CompanionsNames;
+    }
+
+    private static void SeedTheTables()
     {
         var authors = new List<Author> {
             new Author { AuthorName = "Anand East" },
@@ -20,7 +33,7 @@ internal class Program
             new Author { AuthorName = "Eden Hines" },
             new Author { AuthorName = "Belle Daugherty" }
         };
-        context.AddRange(authors);
+        _context.AddRange(authors);
 
 
         var doctors = new List<Doctor> {
@@ -36,7 +49,7 @@ internal class Program
                 FirstEpisodeDate = new DateTime(2016, 2, 7), LastEpisodeDate = new DateTime(2017, 11, 2) },
 
         };
-        context.AddRange(doctors);
+        _context.AddRange(doctors);
 
         var episodes = new List<Episode> {
             new Episode { SeriesNumber = 1, EpisodeNumber = 1, EpisodeType = "Action", Title = "A mysterious enemy has appeared",
@@ -61,7 +74,7 @@ internal class Program
                 EpisodeDate = new DateTime(2021, 5, 27), AuthorId = 5, DoctorId = 2, Notes = "important notes akeed" },
 
         };
-        context.AddRange(episodes);
+        _context.AddRange(episodes);
 
         var enemies = new List<Enemy> {
             new Enemy { EnemyName = "Lara Wells", Description = "crazy girl or something" },
@@ -72,7 +85,7 @@ internal class Program
             new Enemy { EnemyName = "Rhodri Bravo", Description = "the final boss himself" },
 
         };
-        context.AddRange(enemies);
+        _context.AddRange(enemies);
 
         var companions = new List<Companion> {
             new Companion { CompanionName = "Karl Davie", WhoPlayed = "I dont know what this column is" },
@@ -81,7 +94,7 @@ internal class Program
             new Companion { CompanionName = "Zachariah Roberts", WhoPlayed = "german, but not a bad gu somehow" },
             new Companion { CompanionName = "Emmanuella Avalos", WhoPlayed = "I still dont know what this column is, but throwing data" },
         };
-        context.AddRange(companions);
+        _context.AddRange(companions);
 
         var episodeCompanions = new List<EpisodeCompanion> {
             new EpisodeCompanion { EpisodeId = 1, CompanionId = 2 },
@@ -92,7 +105,7 @@ internal class Program
             new EpisodeCompanion { EpisodeId = 7, CompanionId = 4 },
             new EpisodeCompanion { EpisodeId = 2, CompanionId = 1 },
         };
-        context.AddRange(episodeCompanions);
+        _context.AddRange(episodeCompanions);
 
         var episodeEnemies = new List<EpisodeEnemy> {
             new EpisodeEnemy { EpisodeId = 1, EnemyId = 5 },
@@ -103,7 +116,7 @@ internal class Program
             new EpisodeEnemy { EpisodeId = 7, EnemyId = 1 },
             new EpisodeEnemy { EpisodeId = 2, EnemyId = 2 },
         };
-        context.AddRange(episodeEnemies);
-        context.SaveChanges();
+        _context.AddRange(episodeEnemies);
+        _context.SaveChanges();
     }
 }
