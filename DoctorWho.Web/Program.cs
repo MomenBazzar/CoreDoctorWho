@@ -1,5 +1,8 @@
 using DoctorWho.Db;
+using DoctorWho.Db.Models;
 using DoctorWho.Db.Repositories;
+using DoctorWho.Web.Validators;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,11 +18,13 @@ services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 services.AddDbContext<DoctorWhoCoreDbContext>(options =>
 {
-    options.UseSqlServer(
-        "Data Source=MomenLab\\SQLEXPRESS;initial catalog=DoctorWhoCore;persist security info=True;Integrated Security=SSPI;");
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DoctorWhoCore"));
 });
 
 services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+services.AddValidatorsFromAssemblyContaining<DoctorUpdateDtoValidator>();
+
 
 var app = builder.Build();
 

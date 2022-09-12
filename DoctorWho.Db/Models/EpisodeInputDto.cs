@@ -1,8 +1,13 @@
-﻿namespace DoctorWho.Db.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DoctorWho.Db.Models
 {
-    public class EpisodeDto
+    public class EpisodeInputDto
     {
-        public int EpisodeId { get; set; }
         public int SeriesNumber { get; set; }
         public int EpisodeNumber { get; set; }
         public string EpisodeType { get; set; }
